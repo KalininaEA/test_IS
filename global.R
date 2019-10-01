@@ -54,7 +54,16 @@ table_category_time_func=function(table_goods_page, category){
                             dim(table[which(table$flag==3),])[1],
                             dim(table[which(table$flag==4),])[1]
                     ))
-  table1
+  table2=data.frame("period"=c(0:23),
+                    "sum"=c(dim(table[which(table$time==0),])[1], dim(table[which(table$time==1),])[1], dim(table[which(table$time==2),])[1], dim(table[which(table$time==3),])[1],
+                            dim(table[which(table$time==4),])[1], dim(table[which(table$time==5),])[1], dim(table[which(table$time==6),])[1], dim(table[which(table$time==7),])[1],
+                            dim(table[which(table$time==8),])[1], dim(table[which(table$time==9),])[1], dim(table[which(table$time==10),])[1], dim(table[which(table$time==11),])[1],
+                            dim(table[which(table$time==12),])[1], dim(table[which(table$time==13),])[1], dim(table[which(table$time==14),])[1], dim(table[which(table$time==15),])[1],
+                            dim(table[which(table$time==16),])[1], dim(table[which(table$time==17),])[1], dim(table[which(table$time==18),])[1], dim(table[which(table$time==19),])[1],
+                            dim(table[which(table$time==20),])[1], dim(table[which(table$time==21),])[1], dim(table[which(table$time==22),])[1], dim(table[which(table$time==23),])[1]
+                    ))
+  table2$h=paste0(table2$period, ":00")
+  list(table1, table2)
 }
 
 
